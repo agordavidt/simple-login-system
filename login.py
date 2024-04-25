@@ -1,18 +1,18 @@
-def VerifyLogin(username, password, filepath):
+def verifyLogin(username, password, filepath):
     try:
-        password = password +"\n"
+        password = password + "\n"
 
         with open(filepath, 'r') as file:
             lines = file.readlines()
 
             for line in lines:
-                fields = line.split(",")     
-            
-                if(fields[0] == username and fields[1] == password):
-                    return "You are successfully logged in"
-      
-    except Exception:
-        print(Exception)
+                fields = line.split(",")
 
+                if fields[0] == username and fields[1] == password:
+                    return True
 
-    return "Incorrect login credentials"
+    except Exception as e:
+        print(e)
+
+    return False
+
