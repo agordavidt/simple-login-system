@@ -3,21 +3,28 @@ from signup import signUp
 
 
 
+from signup import signUp
 
 def main():
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
+    print("Welcome!")
 
-    # file where user data is stored
-    filepath = "data.txt"
+    choice = input("Press 1 for signup or 2 for login: ")
 
-    if verifyLogin(username, password, filepath):
-        print("You are successfully logged in")
+    if choice == '1':
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+        filepath = "data.txt"
+        signUp(username, password, filepath)
+    elif choice == '2':
+        username = input("Enter your username: ")
+        password = input("Enter your password: ")
+        filepath = "data.txt"
+        if verifyLogin(username, password, filepath):
+            print("You are successfully logged in")
+        else:
+            print("Incorrect login credentials")
     else:
-        print("Incorrect login credentials")
-
-
-
+        print("Invalid choice")
 
 if __name__ == "__main__":
     main()
