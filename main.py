@@ -6,9 +6,9 @@ from signup import signUp
 from signup import signUp
 
 def main():
-    print("Welcome!")
+    print("Welcome to Group A!")
 
-    choice = input("Press 1 for signup or 2 for login: ")
+    choice = input("Press 1 to create an account or 2 to login: ")
 
     if choice == '1':
         username = input("Enter your username: ")
@@ -24,7 +24,7 @@ def main():
         else:
             print("Incorrect login credentials")
     else:
-        print("Invalid choice")
+        print("You have entered a wrong choice.")
 
 if __name__ == "__main__":
     main()
